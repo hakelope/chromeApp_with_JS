@@ -4,12 +4,12 @@ const greeting = document.querySelector("#greeting");
 
 const resetButton = document.querySelector(".reset");
 
-const HIDDEN_CLASSNAME = "hidden"
-const USERNAME_KEY = "username"
+const HIDDEN_CLASSNAME = "hidden";
+const USERNAME_KEY = "username";
 
 function loginFormSubmit(event) {
     event.preventDefault();
-    localStorage.setItem(USERNAME_KEY,loginInput.value);
+    localStorage.setItem(USERNAME_KEY, loginInput.value);
     loginForm.classList.add(HIDDEN_CLASSNAME);
     paintGreeting();
 }
@@ -24,13 +24,11 @@ function paintGreeting() {
     greeting.classList.remove(HIDDEN_CLASSNAME);
 }
 
-resetButton.addEventListener("click",localStorageReset);
-
 const savedUsername = localStorage.getItem(USERNAME_KEY);
 
 if (savedUsername === null) {
     loginForm.classList.remove(HIDDEN_CLASSNAME);
-    loginForm.addEventListener("submit",loginFormSubmit)
+    loginForm.addEventListener("submit", loginFormSubmit);
 } else {
     paintGreeting();
 }
