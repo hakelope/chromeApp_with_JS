@@ -1,12 +1,16 @@
-.hidden{
+.hidden {
     display: none;
 }
 
-body{
+body {
+    display: flex;
     background-size: cover;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
 }
 
-#quote span{
+#quote span {
     color: white;
 }
 
@@ -15,5 +19,13 @@ body{
 }
 
 #clock {
+    color: white;
+}
+
+h1 {
+    color: white;
+}
+
+span {
     color: white;
 }
