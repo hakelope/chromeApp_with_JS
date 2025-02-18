@@ -60,7 +60,7 @@ const quote = document.querySelector("#quote span:nth-child(1)");
 const author = document.querySelector("#quote span:nth-child(2)");
 const quoteKR = document.querySelector("#quote span:nth-child(3)");
 
-const randomNum = Math.floor(Math.random());
+const randomNum = Math.floor(Math.random() * quotes.length);
 quote.innerText = quotes[randomNum].quote;
 author.innerText = quotes[randomNum].quoteKr;
 quoteKR.innerText = quotes[randomNum].author;

@@ -14,10 +14,6 @@ function loginFormSubmit(event) {
     paintGreeting();
 }
 
-function localStorageReset() {
-    localStorage.removeItem(USERNAME_KEY);
-}
-
 function paintGreeting() {
     username = localStorage.getItem(USERNAME_KEY);
     greeting.innerText = `안녕하세요 ${username}님`;
