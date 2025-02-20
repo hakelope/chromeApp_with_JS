@@ -1,12 +1,19 @@
 const clock = document.querySelector("#clock");
+let flash = true;
 
-function sayHello() {
+function clockUpdate() {
     date = new Date()
     H = String(date.getHours()).padStart(2,"0");
     M = String(date.getMinutes()).padStart(2,"0");
-    S = String(date.getSeconds()).padStart(2,"0")
-    clock.innerText = `${H}:${M}:${S}`;
+    if (flash) {
+        clock.innerText = `${H}:${M}`;
+        flash = false;
+    } else {
+        clock.innerText = `${H} ${M}`;
+        flash = true;
+    }
+    
 }
 
-sayHello();
-setInterval(sayHello, 1000);
+clockUpdate();
+setInterval(clockUpdate, 500);
